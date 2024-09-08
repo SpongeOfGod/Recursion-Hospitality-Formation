@@ -1,0 +1,14 @@
+E:\Github\TP3\TP3\bin\Debug\net8.0\TP3.exe
+E:\Github\TP3\TP3\bin\Debug\net8.0\TP3.deps.json
+E:\Github\TP3\TP3\bin\Debug\net8.0\TP3.runtimeconfig.json
+E:\Github\TP3\TP3\bin\Debug\net8.0\TP3.dll
+E:\Github\TP3\TP3\bin\Debug\net8.0\TP3.pdb
+E:\Github\TP3\TP3\obj\Debug\net8.0\TP3.GeneratedMSBuildEditorConfig.editorconfig
+E:\Github\TP3\TP3\obj\Debug\net8.0\TP3.AssemblyInfoInputs.cache
+E:\Github\TP3\TP3\obj\Debug\net8.0\TP3.AssemblyInfo.cs
+E:\Github\TP3\TP3\obj\Debug\net8.0\TP3.csproj.CoreCompileInputs.cache
+E:\Github\TP3\TP3\obj\Debug\net8.0\TP3.dll
+E:\Github\TP3\TP3\obj\Debug\net8.0\refint\TP3.dll
+E:\Github\TP3\TP3\obj\Debug\net8.0\TP3.pdb
+E:\Github\TP3\TP3\obj\Debug\net8.0\TP3.genruntimeconfig.cache
+E:\Github\TP3\TP3\obj\Debug\net8.0\ref\TP3.dll

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Trabajo_Práctico_03
+namespace TP3
 {
     public class ArrayManipulationExtractor
     {
@@ -82,6 +82,18 @@ namespace Trabajo_Práctico_03
             phraseBackwards += " ";
 
             Console.WriteLine($"\nThe whole phrase backwards: {phraseBackwards}");
+
+
+
+            string phraseWithoutVocals = string.Empty;
+
+            for (int i = 0; i < stringys.Length; i++)
+            {
+                //for (int j = 0; j < length; j++)
+                //{
+
+                //}
+            }
         }
     }
 }
