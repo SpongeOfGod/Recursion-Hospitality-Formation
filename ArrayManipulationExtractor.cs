@@ -38,28 +38,34 @@ namespace TP3
 
             Console.WriteLine("\nWrite a letter to count in the phrase");
 
-            char letterInput = Console.ReadLine()[0];
+            string? stringInput = Console.ReadLine();
+            char letterInput = 'a';
 
-            int timesRepeated = 0;
-
-            int numberOfVocals = 0;
-
-            for (int i = 0; i < phrase.Length; i++)
+            if(stringInput != null) 
             {
-                if (letterInput == phrase[i])
+                letterInput = stringInput[0];
+
+                int timesRepeated = 0;
+
+                int numberOfVocals = 0;
+
+                for (int i = 0; i < phrase.Length; i++)
                 {
-                    timesRepeated++;
+                    if (letterInput == phrase[i])
+                    {
+                        timesRepeated++;
+                    }
+
+                    if (equalsVowel(phrase[i]))
+                    {
+                        numberOfVocals++;
+                    }
                 }
 
-                if (equalsVowel(phrase[i]))
-                {
-                    numberOfVocals++;
-                }
+                Console.WriteLine($"\nThe letter ''{letterInput}'' was found {timesRepeated} times");
+                Console.WriteLine($"\nThe number of vocals in the phrase where {numberOfVocals}");
+
             }
-
-            Console.WriteLine($"\nThe letter ''{letterInput}'' was found {timesRepeated} times");
-            Console.WriteLine($"\nThe number of vocals in the phrase where {numberOfVocals}");
-
             string wordsBackwards = string.Empty;
             for (int i = 0; i < stringys.Length; i++)
             {
@@ -89,11 +95,21 @@ namespace TP3
 
             for (int i = 0; i < stringys.Length; i++)
             {
-                //for (int j = 0; j < length; j++)
-                //{
+                for (int j = 0; j < stringys[i].Length; j++)
+                {
+                    char currentChar = stringys[i][j];
 
-                //}
+                    if (equalsVowel(currentChar)) 
+                    {
+                        continue;
+                    }
+
+                    phraseWithoutVocals += currentChar;
+                }
+                phraseWithoutVocals += " ";
             }
+
+            Console.WriteLine($"\nThe phrase without vocals: {phraseWithoutVocals}");
         }
     }
 }
