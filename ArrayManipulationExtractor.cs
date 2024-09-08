@@ -110,6 +110,28 @@ namespace TP3
             }
 
             Console.WriteLine($"\nThe phrase without vocals: {phraseWithoutVocals}");
+
+            int MoveSpaces;
+            char ceasar = 'a';
+            string cifferCeasar = string.Empty;
+            Random rnd = new Random();
+            MoveSpaces = rnd.Next(1,4);
+            for (int i = 0;i < stringys.Length; i++)
+            {
+                for (int j = 0;j < stringys[i].Length; j++)
+                {
+                     ceasar = stringys[i][j];
+
+                    ceasar = (char)(int)(ceasar + MoveSpaces);
+                    cifferCeasar += ceasar;
+                }
+                
+             
+            }
+            Console.WriteLine($"ciffer: {cifferCeasar}");
+
+
+           
         }
     }
 }

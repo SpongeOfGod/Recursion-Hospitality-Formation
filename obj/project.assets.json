@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\facuh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Github\\Recursion-Hospitality-Formation\\TP3.csproj",
+      "projectUniqueName": "C:\\Users\\facuh\\source\\repos\\Recursion-Hospitality-Formation\\TP3.csproj",
       "projectName": "TP3",
-      "projectPath": "E:\\Github\\Recursion-Hospitality-Formation\\TP3.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "E:\\Github\\Recursion-Hospitality-Formation\\obj\\",
+      "projectPath": "C:\\Users\\facuh\\source\\repos\\Recursion-Hospitality-Formation\\TP3.csproj",
+      "packagesPath": "C:\\Users\\facuh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\facuh\\source\\repos\\Recursion-Hospitality-Formation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\facuh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
