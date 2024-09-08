@@ -8,52 +8,39 @@ namespace TP3
 {
     internal class AddAndMultiply
     {
-        string numbersToAdd;
-        string numbersToMultiply;
+        string numbersToAdd = "";
+        string numbersToMultiply = "";
 
         public void Update()
         {
-            if (!int.TryParse(Console.ReadLine(), out int result))
+            if (!int.TryParse(Console.ReadLine(), out int result) || result < 0)
             {
-                result = 5;
+                Console.WriteLine("Entrada inválida.");
+                result = 0; 
             }
 
-            int addResult = result;
-            int multiplyResult = result;
+            int addResult = sum(result);
+            numbersToAdd = numbersToAdd.TrimEnd(' ', '+');
+            int multiplyResult = multiply(result);
+            numbersToMultiply = numbersToMultiply.TrimEnd(' ', 'x');
 
-            addResult = sum(addResult);
-            multiplyResult = multiply(multiplyResult);
-
-            Console.WriteLine("\nSuma de todos los anterioes:  " + addResult + $" = {numbersToAdd}\n");
-            Console.WriteLine("\nMultiplicación de todos los anteriores  " + multiplyResult + $" =  {numbersToMultiply}\n");
+            Console.WriteLine($"\nMultiplicación de todos los anteriores (Factorial de {result}): \n{multiplyResult} = {numbersToMultiply}");
+            Console.WriteLine($"\nSuma de todos los anteriores a {result}: \n{addResult} = {numbersToAdd}");
         }
-
 
         int sum(int num)
         {
-            numbersToAdd += $"{num}";
+            if (num == 0) return 0;
 
-            if (num == 0)
-            {
-                return num;
-            }
-
-            numbersToAdd += " + ";
-
+            numbersToAdd += $"{num} + ";
             return num + sum(num - 1);
         }
 
-       int multiply(int number)
+        int multiply(int number)
         {
-            numbersToMultiply += $"{number}";
+            if (number == 1 || number == 0) return 1;
 
-            if (number == 1)
-            {
-                return number;
-            }
-
-            numbersToMultiply += " x ";
-
+            numbersToMultiply += $"{number} x ";
             return number * multiply(number - 1);
         }
     }

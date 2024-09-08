@@ -1,137 +1,162 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TP3
 {
     public class ArrayManipulationExtractor
     {
-        public void arrayreader() 
+        public void arrayreader()
         {
-            Console.WriteLine("Write a phrase, please.\n");
+            Console.WriteLine("\nIngrese una oración: ");
             string phrase = Console.ReadLine();
+            Console.WriteLine(" ");
 
-            string[] stringys = phrase.Split(' ');
+            string[] words = phrase.Split(' ');
+            int totalLength = 0;
 
-            int lengthArrayString = 0;
-
-            bool equalsVowel(char c)
+            Console.WriteLine($"Longitud con espacios: \n{phrase.Length}");
+            foreach (var word in words)
             {
-                if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
-                {
-                    return true;
-                }
-                return false;
+                totalLength += word.Length;
             }
+            Console.WriteLine($"Longitud sin espacios: \n{totalLength}");
 
-            for (int i = 0; i < stringys.Length; i++)
+            Console.WriteLine("\nEscriba un carácter para contar en la oración:");
+            string? input = Console.ReadLine();
+            char letter = 'a';
+
+            if (input != null)
             {
-                Console.WriteLine(stringys[i] + $" length: {stringys[i].Length}");
-                lengthArrayString += stringys[i].Length;
-            }
+                letter = input[0];
 
-            Console.WriteLine($"\nLength with spaces: {phrase.Length}");
+                int countLetter = 0;
+                int countVowels = 0;
 
-            Console.WriteLine($"\nLength without spaces: {lengthArrayString}");
-
-            Console.WriteLine("\nWrite a letter to count in the phrase");
-
-            string? stringInput = Console.ReadLine();
-            char letterInput = 'a';
-
-            if(stringInput != null) 
-            {
-                letterInput = stringInput[0];
-
-                int timesRepeated = 0;
-
-                int numberOfVocals = 0;
-
-                for (int i = 0; i < phrase.Length; i++)
+                foreach (var c in phrase)
                 {
-                    if (letterInput == phrase[i])
+                    if (letter == c)
                     {
-                        timesRepeated++;
+                        countLetter++;
                     }
 
-                    if (equalsVowel(phrase[i]))
+                    if (IsVowel(c))
                     {
-                        numberOfVocals++;
+                        countVowels++;
                     }
                 }
 
-                Console.WriteLine($"\nThe letter ''{letterInput}'' was found {timesRepeated} times");
-                Console.WriteLine($"\nThe number of vocals in the phrase where {numberOfVocals}");
-
-            }
-            string wordsBackwards = string.Empty;
-            for (int i = 0; i < stringys.Length; i++)
-            {
-
-                for (int j = stringys[i].Length - 1; j > -1; j--)
+                if (countLetter == 0)
                 {
-                    wordsBackwards += stringys[i][j];
+                    Console.WriteLine($"\nLa oración no contiene el carácter '{letter}'.");
+                }
+                else if (countLetter == 1)
+                {
+                    Console.WriteLine($"\nEl carácter '{letter}' se encontró una vez.");
+                }
+                else
+                {
+                    Console.WriteLine($"\nEl carácter '{letter}' se encontró {countLetter} veces.");
                 }
 
-                wordsBackwards += " ";
-            }
-            Console.WriteLine($"\nThe phrase with the words backwards: {wordsBackwards}");
-
-
-            string phraseBackwards = string.Empty;
-            for (int i = phrase.Length - 1; i > -1; i--)
-            {
-                phraseBackwards += phrase[i];
-            }
-            phraseBackwards += " ";
-
-            Console.WriteLine($"\nThe whole phrase backwards: {phraseBackwards}");
-
-
-
-            string phraseWithoutVocals = string.Empty;
-
-            for (int i = 0; i < stringys.Length; i++)
-            {
-                for (int j = 0; j < stringys[i].Length; j++)
+                if (countVowels == 0)
                 {
-                    char currentChar = stringys[i][j];
+                    Console.WriteLine($"La oración no contiene vocales.");
+                }
+                else
+                {
+                    Console.WriteLine($"El número de vocales en la oración es {countVowels}.");
+                }
+            }
 
-                    if (equalsVowel(currentChar)) 
+            Console.WriteLine("\nLargo de cada palabra: ");
+            foreach (var word in words)
+            {
+                Console.WriteLine($"Número de caracteres en '{word}': {word.Length}");
+            }
+
+            string reversedPhrase = string.Empty;
+            for (int i = phrase.Length - 1; i >= 0; i--)
+            {
+                reversedPhrase += phrase[i];
+            }
+            Console.WriteLine($"\nLa oración completa al revés: \n{reversedPhrase}");
+
+            string reversedWords = string.Empty;
+            foreach (var word in words)
+            {
+                for (int j = word.Length - 1; j >= 0; j--)
+                {
+                    reversedWords += word[j];
+                }
+                reversedWords += " ";
+            }
+            Console.WriteLine($"La oración con las palabras al revés: \n{reversedWords}");
+
+            string phraseWithoutVowels = string.Empty;
+            foreach (var word in words)
+            {
+                foreach (var c in word)
+                {
+                    if (!IsVowel(c))
                     {
-                        continue;
+                        phraseWithoutVowels += c;
                     }
-
-                    phraseWithoutVocals += currentChar;
                 }
-                phraseWithoutVocals += " ";
+                phraseWithoutVowels += " ";
             }
+            Console.WriteLine($"\nLa oración sin vocales: \n{phraseWithoutVowels}");
 
-            Console.WriteLine($"\nThe phrase without vocals: {phraseWithoutVocals}");
+            Console.WriteLine($"\nLa oración en mayúsculas: \n{phrase.ToUpper()}");
 
-            int MoveSpaces;
-            char ceasar = 'a';
-            string cifferCeasar = string.Empty;
-            Random rnd = new Random();
-            MoveSpaces = rnd.Next(1,4);
-            for (int i = 0;i < stringys.Length; i++)
+            int shift;
+            string ceasarCipher = string.Empty;
+            Random random = new Random();
+            do { shift = random.Next(-3, 3);
+            } while (shift == 0);
+
+            foreach (var word in words)
             {
-                for (int j = 0;j < stringys[i].Length; j++)
+                foreach (var c in word)
                 {
-                     ceasar = stringys[i][j];
-
-                    ceasar = (char)(int)(ceasar + MoveSpaces);
-                    cifferCeasar += ceasar;
+                    char ceasarChar = c;
+                    if (char.IsLetter(c))
+                    {
+                        char a = char.IsUpper(c) ? 'A' : 'a';
+                        ceasarChar = (char)((((c - a) + shift + 26) % 26) + a);
+                    }
+                    ceasarCipher += ceasarChar;
                 }
-                
-             
+                ceasarCipher += " ";
             }
-            Console.WriteLine($"ciffer: {cifferCeasar}");
+            Console.WriteLine($"\nLa oración usando el Cifrado de César (Llave utilizada: {shift}): \n{ceasarCipher}");
 
+            // Cifrado de espejo: A-Z -> Z-A, a-z -> z-a.
+            // Cada letra se reemplaza por otra en su posición opuesta en el alfabeto.
 
-           
+            string mirrorCipher = string.Empty;
+            foreach (var c in phrase)
+            {
+                if (char.IsLetter(c))
+                {
+                    if (char.IsUpper(c))
+                    {
+                        mirrorCipher += (char)('Z' - (c - 'A'));
+                    }
+                    else
+                    {
+                        mirrorCipher += (char)('z' - (c - 'a'));
+                    }
+                }
+                else
+                {
+                    mirrorCipher += c;
+                }
+            }
+            Console.WriteLine($"\nLa oración usando el Cifrado de Espejo: \n{mirrorCipher}");
+        }
+
+        private bool IsVowel(char c)
+        {
+            return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
         }
     }
 }

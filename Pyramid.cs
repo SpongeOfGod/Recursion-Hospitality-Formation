@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace TP3
 {
-    public class Pyramid
+    public class Pyramid //𓄿𓈖𓅲𓃀𓇋𓋴, 𓏏𓅂𓈖 𓊪𓇋𓅂𓂧𓄿𓂧 𓂧𓅂 𓅓𓇋 𓄿𓃭𓅓𓄿. 𓂧𓅂𓆓𓄿 𓂧𓅂𓂋𓅂𓏏𓇋𓂋𓅓𓅂 𓅂𓈖 𓅂𓃭 𓎢𓄿𓃭𓅲𓂋𓅱𓋴𓅱 𓄿𓃀𓂋𓄿𓊃𓅱 𓂧𓅂 𓂋𓄿.
     {
         public void Update() 
         {
             if (int.TryParse(Console.ReadLine(), out int pyramidHeight))
             {
+                Console.WriteLine($"");
                 for (int i = 0; i < pyramidHeight; i++)
                 {
 

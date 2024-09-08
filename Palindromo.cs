@@ -12,8 +12,19 @@ namespace TP3
         {
             string? phrase = Console.ReadLine();
 
-            char[] chars = phrase.ToCharArray();
+            if (string.IsNullOrWhiteSpace(phrase))
+            {
+                Console.WriteLine("La entrada está vacía.");
+                return;
+            }
 
+            if (phrase.Length == 1)
+            {
+                Console.WriteLine($"\nSí, '{phrase}' es un palíndromo (un solo carácter).");
+                return;
+            }
+
+            char[] chars = phrase.ToCharArray();
             readPhrase(phrase, chars);
         }
 
@@ -21,27 +32,22 @@ namespace TP3
         {
             bool forNowPalindromo = true;
 
-            for (int i = 0; i < phrase.Length; i++)
+            for (int i = 0; i < phrase.Length / 2; i++)
             {
-                if (phrase.Length - i < 0)
-                {
-                    break;
-                }
-
                 if (chars[i] != chars[(phrase.Length - 1) - i])
                 {
                     forNowPalindromo = false;
+                    break;
                 }
             }
 
-
             if (forNowPalindromo)
             {
-                Console.WriteLine($"\n{phrase} es palindromo\n");
+                Console.WriteLine($"\nSí, '{phrase}' es un palíndromo.");
             }
             else
             {
-                Console.WriteLine($"\n{phrase} no es palindromo\n");
+                Console.WriteLine($"\nNo, '{phrase}' no es un palíndromo.");
             }
         }
     }

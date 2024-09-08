@@ -39,15 +39,14 @@
 
         private void WriteNumbers()
         {
-            Console.WriteLine("\nWrite your first Number: \n");
             number1text = Console.ReadLine();
 
-            Console.WriteLine("\nWrite your second Number: \n");
+            Console.WriteLine("\nIngrese el segundo número de la secuencia de Fibonacci: ");
             number2text = Console.ReadLine();
 
-
-            Console.WriteLine("\nWrite the number of times you want to repeat the sequence (If you put an invalid value, it will be 0)\n");
+            Console.WriteLine("\n¿Cuántos términos desea generar en la secuencia de Fibonacci? (si ingresa un valor no válido, será 0): ");
             string repeat = Console.ReadLine();
+            Console.WriteLine($"");
 
             if (int.TryParse(repeat, out int result))
             {
@@ -78,7 +77,7 @@
             {
                 int resultNumber = firstNumber + secondNumber;
 
-                Console.WriteLine($"\n{resultNumber} = {firstNumber} + {secondNumber}\n");
+                Console.WriteLine($"{resultNumber} = {firstNumber} + {secondNumber}");
                 firstNumber = secondNumber;
                 secondNumber = resultNumber;
             }
@@ -88,7 +87,7 @@
 
         private void fiboFinished()
         {
-            Console.WriteLine("Your sequence is finished!!!!!!\n");
+            Console.WriteLine("\nSECUENCIA FINALIZADA.");
             finishFibo = false;
             firstNumbersInserted = false;
         }

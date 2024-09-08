@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\facuh\\source\\repos\\Recursion-Hospitality-Formation\\TP3.csproj": {}
+    "D:\\Github\\Recursion-Hospitality-Formation\\TP3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\facuh\\source\\repos\\Recursion-Hospitality-Formation\\TP3.csproj": {
+    "D:\\Github\\Recursion-Hospitality-Formation\\TP3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\facuh\\source\\repos\\Recursion-Hospitality-Formation\\TP3.csproj",
+        "projectUniqueName": "D:\\Github\\Recursion-Hospitality-Formation\\TP3.csproj",
         "projectName": "TP3",
-        "projectPath": "C:\\Users\\facuh\\source\\repos\\Recursion-Hospitality-Formation\\TP3.csproj",
-        "packagesPath": "C:\\Users\\facuh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\facuh\\source\\repos\\Recursion-Hospitality-Formation\\obj\\",
+        "projectPath": "D:\\Github\\Recursion-Hospitality-Formation\\TP3.csproj",
+        "packagesPath": "C:\\Users\\alejo\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\Recursion-Hospitality-Formation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\facuh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alejo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -55,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
