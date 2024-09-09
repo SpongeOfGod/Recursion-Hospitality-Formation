@@ -77,7 +77,10 @@ namespace TP3
             Console.WriteLine("\n-----------------------------------------------------");
             Console.WriteLine("\n                   FILA DE HOSPITAL");
             Console.WriteLine("\n-----------------------------------------------------");
-            Console.WriteLine(":v");
+
+            HospitalLine hospitalLine = new HospitalLine();
+            hospitalLine.Update();
+            //:v
         }
     }
 }
