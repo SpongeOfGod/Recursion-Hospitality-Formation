@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TP3
 {
@@ -24,7 +25,7 @@ namespace TP3
             string? input = Console.ReadLine();
             char letter = 'a';
 
-            if (input != null)
+            if (input != string.Empty)
             {
                 letter = input[0];
 

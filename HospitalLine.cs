@@ -4,26 +4,30 @@
     {
         PriorityQueue<Paciente, int> priorityQueue = new PriorityQueue<Paciente, int>();
         int priority = 0;
-        public void Update() 
+
+        public void Update()
         {
             int valorMinimo = 1;
-            int valorMaximo = 0;
+            int valorMaximo = 2;
 
-            Console.WriteLine($"\nEscriba el minimo valor de prioridad para los pacientes (si ingresa un valor no valido, sera 1): ");
+            Console.WriteLine($"\nEscriba el valor mínimo de prioridad para los pacientes (si ingresa un valor no válido, será 1): ");
+            string inputMinimo = Console.ReadLine();
 
-            valorMinimo = int.Parse(Console.ReadLine());
-
-            if(valorMinimo < 1) 
+            if (valorMinimo < 1)
             {
                 valorMinimo = 1;
             }
 
-            Console.WriteLine($"\nEscriba el maximo valor de prioridad para los pacientes: ");
+            Console.WriteLine($"\nEscriba el valor máximo de prioridad para los pacientes (si ingresa un valor no válido, será 2): ");
+            string inputMaximo = Console.ReadLine();
 
-            valorMaximo = int.Parse(Console.ReadLine());
+            if (valorMaximo < valorMinimo)
+            {
+                Console.WriteLine("\nError: El valor máximo es menor que el valor mínimo.");
+                return;
+            }
 
             CrearPacientes(valorMinimo, valorMaximo);
-
 
             Console.WriteLine("\n-------------------------------------------" +
                               "\n           ATENDIENDO PACIENTES" +
@@ -32,7 +36,7 @@
             AtenderClientes();
         }
 
-        private void CrearPacientes(int valorMinimo, int valorMaximo) 
+        private void CrearPacientes(int valorMinimo, int valorMaximo)
         {
             for (int i = 0; i < 19; i++)
             {
@@ -49,11 +53,11 @@
             }
         }
 
-        private void AtenderClientes() 
+        private void AtenderClientes()
         {
-            while(priorityQueue.TryDequeue(out Paciente paciente, out int priority)) 
+            while (priorityQueue.TryDequeue(out Paciente paciente, out int priority))
             {
-                Console.WriteLine($"\n Atendiendo a paciente: {paciente.nombre}, de prioridad: {priority}. Llego {paciente.order}.");
+                Console.WriteLine($"\n Atendiendo al paciente {paciente.nombre} (de prioridad {priority}): Llegó {paciente.order}.");
             }
         }
     }
