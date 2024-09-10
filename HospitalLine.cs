@@ -11,7 +11,7 @@
             int valorMaximo = 2;
 
             Console.WriteLine($"\nEscriba el valor mínimo de prioridad para los pacientes (si ingresa un valor no válido, será 1): ");
-            string inputMinimo = Console.ReadLine();
+            valorMinimo = int.Parse(Console.ReadLine());
 
             if (valorMinimo < 1)
             {
@@ -19,7 +19,7 @@
             }
 
             Console.WriteLine($"\nEscriba el valor máximo de prioridad para los pacientes (si ingresa un valor no válido, será 2): ");
-            string inputMaximo = Console.ReadLine();
+            valorMaximo = int.Parse(Console.ReadLine());
 
             if (valorMaximo < valorMinimo)
             {
@@ -59,6 +59,7 @@
             {
                 Console.WriteLine($"\n Atendiendo al paciente {paciente.nombre} (de prioridad {priority}): Llegó {paciente.order}.");
             }
+
         }
     }
 }
